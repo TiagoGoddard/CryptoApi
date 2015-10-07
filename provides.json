@@ -1,5 +1,5 @@
 {
     "providers": [
-        "Amegatron\Cryptoapi\CryptoapiServiceProvider"
+        "TiagoGoddard\Cryptoapi\CryptoapiServiceProvider"
     ]
 }

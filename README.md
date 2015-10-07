@@ -27,17 +27,17 @@ The algorithm is based on two cryptography algorithms: symmetric and asymmetric.
 ## Package installation ##
 
 Add the following to composer.json of your Laravel project in the "require" section:
-`"amegatron/cryptoapi": "1.0.*"`
+`"tiagogoddard/cryptoapi": "1.0.*"`
 
 After that run `composer update` in console and ensure the packaged has been downloaded.
 
-In case you are using `rtablada/package-installer` you can run `php artisan package:install amegatron/cryptoapi` to automatically add package's Service Provider to application config.
+In case you are using `rtablada/package-installer` you can run `php artisan package:install tiagogoddard/cryptoapi` to automatically add package's Service Provider to application config.
 
-If you don't use the above package, you should register the Service Provider manually. To do so, add the following element in your "providers" section of `app/config/app.php`: `'Amegatron\Cryptoapi\CryptoapiServiceProvider',`
+If you don't use the above package, you should register the Service Provider manually. To do so, add the following element in your "providers" section of `app/config/app.php`: `'TiagoGoddard\Cryptoapi\CryptoapiServiceProvider',`
 
 Also you must "regster" an outgoing encryption filter, provided by the package. Add the following in `app/filters.php`:
 
-`Route::filter('cryptOut', 'Amegatron\Cryptoapi\Filters\OutgoingCryptFilter');`
+`Route::filter('cryptOut', 'TiagoGoddard\Cryptoapi\Filters\OutgoingCryptFilter');`
 
 ## Generating key-pair ##
 
@@ -91,16 +91,16 @@ public function postInit() {
 }
 ```
 
-What should be noted here? First, creation of `$crpyt` object through Laravel IoC. Currently, it creates `Amegatron\Cryptoapi\Cryptography\RsaAesCryptography` object which implements an interface `Amegatron\Cryptoapi\Cryptography\CryptographyIterface`. This object contains all methods we will need for encryption, decryption and signing.
+What should be noted here? First, creation of `$crpyt` object through Laravel IoC. Currently, it creates `TiagoGoddard\Cryptoapi\Cryptography\RsaAesCryptography` object which implements an interface `TiagoGoddard\Cryptoapi\Cryptography\CryptographyIterface`. This object contains all methods we will need for encryption, decryption and signing.
 
 Second, is the initialization of symmetric "driver" (`$crypt->initSymmetric(...);`). It will store the AES key in the session for further use.
 
 Also note that responses from `/api/init` are not encrypted (for the case if this initialization fails). Also, response messages are not "speaking". The client should know what does e.g. "ERROR 1" means. This is done for not telling the possible hacker the internals of the API.
 
-And lastly, if the following code suites you, you may just use pre-made trait for this, `Amegatron\Cryptoapi\Traits\RsaAesControllerTrait` which already has this `postInit` method.
+And lastly, if the following code suites you, you may just use pre-made trait for this, `TiagoGoddard\Cryptoapi\Traits\RsaAesControllerTrait` which already has this `postInit` method.
 
 ```
-use Amegatron\Cryptoapi\Traits\RsaAesControllerTrait;
+use TiagoGoddard\Cryptoapi\Traits\RsaAesControllerTrait;
 ```
 
 Or if you are too lazy or your IDE does not insert the full name of the Trait automatically, you can just
@@ -156,11 +156,11 @@ public function __construct() {
 
 Note also, that this filter is applied to all controller methods except `postInit` as I stated earlier - the output of this method should not be encrypted.
 
-See `Amegatron\Cryptoapi\Filters\OutgoingCryptFilter.php` if you are curious about how it does encryption and signing.
+See `TiagoGoddard\Cryptoapi\Filters\OutgoingCryptFilter.php` if you are curious about how it does encryption and signing.
 
 # Client-side example #
 
-Here is a C# example of client: https://github.com/Amegatron/CryptoApiExample
+Here is a C# example of client: https://github.com/TiagoGoddard/CryptoApiExample
 
 # Testing your CryptoApi #
 
@@ -188,8 +188,8 @@ Make sure you have an `ApiController` as described earlier. For this test this c
 ```
 class ApiController extends BaseController {
 
-    use \Amegatron\Cryptoapi\Traits\RsaAesControllerTrait;
-    use \Amegatron\Cryptoapi\Traits\TestsControllerTrait;
+    use \TiagoGoddard\Cryptoapi\Traits\RsaAesControllerTrait;
+    use \TiagoGoddard\Cryptoapi\Traits\TestsControllerTrait;
 
 }
 ```
@@ -210,7 +210,7 @@ After that start the server: `php artisan serve &`. It will start the server on 
 
 ### The test ###
 
-Now cd to the package directory: `cd vendor/amegatron/cryptoapi`.
+Now cd to the package directory: `cd vendor/TiagoGoddard/cryptoapi`.
 
 Now you can run the test. Execute the following command: `../..bin/codecapt run` and wait until it finishes.
 
