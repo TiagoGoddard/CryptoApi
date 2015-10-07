@@ -1,4 +1,4 @@
-<?php namespace Amegatron\Cryptoapi\Cryptography;
+<?php namespace TiagoGoddard\Cryptoapi\Cryptography;
 
 interface CryptographyInterface {
 

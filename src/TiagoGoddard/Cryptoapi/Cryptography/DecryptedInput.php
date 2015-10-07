@@ -1,6 +1,6 @@
-<?php namespace Amegatron\Cryptoapi\Cryptography;
+<?php namespace TiagoGoddard\Cryptoapi\Cryptography;
 
-use Amegatron\Cryptoapi\Helpers\Base64;
+use TiagoGoddard\Cryptoapi\Helpers\Base64;
 
 /**
  * Provides funcitonality for getting decrypted Input paramters
@@ -21,7 +21,7 @@ class DecryptedInput {
     protected $decryptedParams = array();
 
     /**
-     * @var \Amegatron\Cryptoapi\Cryptography\CryptographyInterface
+     * @var \TiagoGoddard\Cryptoapi\Cryptography\CryptographyInterface
      */
     protected $crypt;
 

@@ -1,8 +1,8 @@
-<?php namespace Amegatron\Cryptoapi;
+<?php namespace TiagoGoddard\Cryptoapi;
 
-use Amegatron\Cryptoapi\Commands\GenerateKeyPairCommand;
-use Amegatron\Cryptoapi\Commands\TestCommand;
-use Amegatron\Cryptoapi\Cryptography\DecryptedInput;
+use TiagoGoddard\Cryptoapi\Commands\GenerateKeyPairCommand;
+use TiagoGoddard\Cryptoapi\Commands\TestCommand;
+use TiagoGoddard\Cryptoapi\Cryptography\DecryptedInput;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
@@ -24,7 +24,7 @@ class CryptoapiServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('amegatron/cryptoapi');
+		$this->package('tiagogoddard/cryptoapi');
 	}
 
     /**
@@ -45,12 +45,12 @@ class CryptoapiServiceProvider extends ServiceProvider {
     protected function registerKeyGenerators() {
         \App::bind(
             'cryptoapi.generator.php',
-            'Amegatron\\Cryptoapi\\KeyGenerators\\PhpKeyGenerator'
+            'TiagoGoddard\\Cryptoapi\\KeyGenerators\\PhpKeyGenerator'
         );
 
         \App::bind(
             'cryptoapi.generator.openssl',
-            'Amegatron\\Cryptoapi\\KeyGenerators\\OpenSslKeyGenerator'
+            'TiagoGoddard\\Cryptoapi\\KeyGenerators\\OpenSslKeyGenerator'
         );
     }
 
@@ -72,8 +72,8 @@ class CryptoapiServiceProvider extends ServiceProvider {
         });
 
         $aliasLoader = AliasLoader::getInstance();
-        $aliasLoader->alias('DecryptedInput', 'Amegatron\Cryptoapi\Facades\DecryptedInput');
-        $aliasLoader->alias('RsaAesControllerTrait', 'Amegatron\Cryptoapi\Traits\RsaAesControllerTrait');
+        $aliasLoader->alias('DecryptedInput', 'TiagoGoddard\Cryptoapi\Facades\DecryptedInput');
+        $aliasLoader->alias('RsaAesControllerTrait', 'TiagoGoddard\Cryptoapi\Traits\RsaAesControllerTrait');
     }
 
 	/**

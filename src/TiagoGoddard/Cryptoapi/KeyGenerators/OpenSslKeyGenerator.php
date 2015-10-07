@@ -1,4 +1,4 @@
-<?php namespace Amegatron\Cryptoapi\KeyGenerators;
+<?php namespace TiagoGoddard\Cryptoapi\KeyGenerators;
 
 class OpenSslKeyGenerator implements KeyGeneratorInterface {
 

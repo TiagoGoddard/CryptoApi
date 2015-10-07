@@ -1,9 +1,9 @@
-<?php namespace Amegatron\Cryptoapi\Cryptography;
+<?php namespace TiagoGoddard\Cryptoapi\Cryptography;
 
 use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
-use Amegatron\Cryptoapi\Helpers\Base64;
+use TiagoGoddard\Cryptoapi\Helpers\Base64;
 
 class RsaAesCryptography implements CryptographyInterface {
     /**

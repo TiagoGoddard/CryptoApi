@@ -1,4 +1,4 @@
-<?php namespace Amegatron\Cryptoapi\Helpers;
+<?php namespace TiagoGoddard\Cryptoapi\Helpers;
 
 class Base64 {
     public static function UrlDecode($x)

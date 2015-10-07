@@ -1,4 +1,4 @@
-<?php namespace Amegatron\Cryptoapi\Commands;
+<?php namespace TiagoGoddard\Cryptoapi\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Input;

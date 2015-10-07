@@ -1,4 +1,4 @@
-<?php namespace Amegatron\Cryptoapi\Traits;
+<?php namespace TiagoGoddard\Cryptoapi\Traits;
 
 trait TestsControllerTrait {
 

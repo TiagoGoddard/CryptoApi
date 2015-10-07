@@ -1,4 +1,4 @@
-<?php namespace Amegatron\Cryptoapi\Facades;
+<?php namespace TiagoGoddard\Cryptoapi\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

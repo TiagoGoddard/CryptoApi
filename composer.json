@@ -1,5 +1,5 @@
 {
-    "name": "amegatron/cryptoapi",
+    "name": "tiagogoddard/cryptoapi",
     "description": "Provides classes for implementing encrypted API with the client software",
     "keywords": ["laravel", "cryptography", "rsa", "aes", "api"],
     "license": "DBAD",
@@ -7,6 +7,9 @@
         {
             "name": "Aleksandr Egorov",
             "email": "amego2006@gmail.com"
+        },{
+            "name": "Tiago Goddard",
+            "email": "tiago@goddard.com.br"
         }
     ],
     "require": {
@@ -15,7 +18,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Amegatron\\Cryptoapi\\": "src/"
+            "TiagoGoddard\\Cryptoapi\\": "src/"
         }
     },
     "minimum-stability": "stable"

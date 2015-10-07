@@ -1,6 +1,6 @@
-<?php namespace Amegatron\Cryptoapi\Filters;
+<?php namespace TiagoGoddard\Cryptoapi\Filters;
 
-use Amegatron\Cryptoapi\Helpers\Base64;
+use TiagoGoddard\Cryptoapi\Helpers\Base64;
 
 /**
  * Class OutgoingCryptFilter
